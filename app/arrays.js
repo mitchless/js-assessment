@@ -2,19 +2,12 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 
 define(function() {
   return {
-    indexOf : function(arr, item) {
-
-    },
 
     sum : function(arr) {
 
     },
 
     remove : function(arr, item) {
-
-    },
-    
-    removeWithoutCopy : function(arr, item) {
 
     },
 
@@ -30,23 +23,7 @@ define(function() {
 
     },
 
-    insert : function(arr, item, index) {
-
-    },
-
     count : function(arr, item) {
-
-    },
-
-    duplicates : function(arr) {
-
-    },
-
-    square : function(arr) {
-
-    },
-
-    findAllOccurrences : function(arr, target) {
 
     }
   };

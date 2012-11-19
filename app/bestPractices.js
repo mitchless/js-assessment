@@ -25,10 +25,6 @@ define(function() {
       return getValue();
     },
 
-    parseInt : function(num) {
-      return parseInt(num);
-    },
-
     identity : function(val1, val2) {
 
     }

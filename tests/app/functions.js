@@ -17,32 +17,27 @@ define([
       sayItCalled = false;
     });
 
-    it("you should be able to use an array as arguments when calling a function", function() {
-      var result = answers.argsAsArray(sayIt, [ 'Hello', 'Ellie', '!' ]);
-      expect(result).to.be('Hello, Ellie!');
+    it("should use an array as arguments when calling a function", function() {
+      var result = answers.argsAsArray(sayIt, [ 'Hello', 'World', '!' ]);
+      expect(result).to.be('Hello, World!');
       expect(sayItCalled).to.be.ok();
     });
 
-    it("you should be able to change the context in which a function is called", function() {
+    it("should change the context in which a function is called", function() {
       var speak = function() {
             return sayIt(this.greeting, this.name, '!!!');
           },
           obj = {
             greeting : 'Hello',
-            name : 'Rebecca'
+            name : 'Seapine'
           };
 
       var result = answers.speak(speak, obj);
-      expect(result).to.be('Hello, Rebecca!!!');
+      expect(result).to.be('Hello, Seapine!!!');
       expect(sayItCalled).to.be.ok();
     });
 
-    it("you should be able to return a function from a function", function() {
-      expect(answers.functionFunction('Hello')('world')).to.be('Hello, world');
-      expect(answers.functionFunction('Hai')('can i haz funxtion?')).to.be('Hai, can i haz funxtion?');
-    });
-
-    it('you should be able to use closures', function () {
+    it('should use closures', function () {
       var arr = [ Math.random(), Math.random(), Math.random(), Math.random() ];
       var doSomeStuff;
 
@@ -56,13 +51,7 @@ define([
       }
     });
 
-    it("you should be able to create a 'partial' function", function() {
-      var partial = answers.partial(sayIt, 'Hello', 'Ellie');
-      expect(partial('!!!')).to.be('Hello, Ellie!!!');
-      expect(sayItCalled).to.be.ok();
-    });
-
-    it("you should be able to use arguments", function () {
+    it("should use arguments", function () {
       var a = Math.random(),
           b = Math.random(),
           c = Math.random(),
@@ -74,38 +63,7 @@ define([
       expect(answers.useArguments(a, b, c, d)).to.be(a + b + c + d);
     });
 
-    it("you should be able to apply functions with arbitrary numbers of arguments", function () {
-      (function () {
-        var a = Math.random(), b = Math.random(), c = Math.random();
-
-        var wasITake2ArgumentsCalled = false;
-        var iTake2Arguments = function (firstArgument, secondArgument) {
-          expect(arguments.length).to.be(2);
-          expect(firstArgument).to.be(a);
-          expect(secondArgument).to.be(b);
-
-          wasITake2ArgumentsCalled = true;
-        };
-
-        var wasITake3ArgumentsCalled = false;
-        var iTake3Arguments = function (firstArgument, secondArgument, thirdArgument) {
-          expect(arguments.length).to.be(3);
-          expect(firstArgument).to.be(a);
-          expect(secondArgument).to.be(b);
-          expect(thirdArgument).to.be(c);
-
-          wasITake3ArgumentsCalled = true;
-        };
-
-        answers.callIt(iTake2Arguments, a, b);
-        answers.callIt(iTake3Arguments, a, b, c);
-
-        expect(wasITake2ArgumentsCalled).to.be.ok();
-        expect(wasITake3ArgumentsCalled).to.be.ok();
-      })();
-    });
-
-    it("you should be able to curry existing functions", function () {
+    it("should curry existing functions", function () {
       var curryMe = function (x, y, z) {
         return x / y * z;
       };

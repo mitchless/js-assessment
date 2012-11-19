@@ -1,18 +1,18 @@
 var tests = [
   // link to test files here
-  'tests/app/bestPractices',
   'tests/app/arrays',
-  'tests/app/objects',
-  'tests/app/functions',
-  'tests/app/modules',
+  'tests/app/bestPractices',
   'tests/app/flowControl',
+  'tests/app/functions',
+  'tests/identifyTypes',
   'tests/app/logicalOperators',
-  'tests/app/regex'
+  'tests/app/objects',
+  'tests/app/previousDay',
+  'tests/app/removeDups',
+  'tests/app/sorting'
 ];
 
-if (typeof window !== 'undefined') {
-  tests.push('tests/app/async');
-} else {
+if (typeof window === 'undefined') {
   var requirejs = require('requirejs');
   requirejs.config({
     baseUrl : __dirname + '/../',

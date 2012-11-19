@@ -5,14 +5,21 @@ define([
   'app/flowControl'
 ], function(answers) {
   describe("flow control", function() {
-    it("you should be able to conditionally branch your code", function() {
+
+    /**
+     * Given a number:
+     *    - if it is divisible by 3 - return 'fizz'
+     *    - if it is divisible by 5 - return 'buzz'
+     *    - if it is divisible by 3 and 5 - return 'fizzbuzz'
+     *    - otherwise, return the number
+     */
+    it("should be able to conditionally branch your code", function() {
       var num = 0;
 
       while (num % 3 === 0 || num % 5 === 0) {
           num = Math.floor(Math.random() * 10) + 1;
       }
 
-      expect(answers.fizzBuzz()).not.to.be.ok();
       expect(answers.fizzBuzz(2)).to.be(2);
       expect(answers.fizzBuzz(101)).to.be(101);
 
