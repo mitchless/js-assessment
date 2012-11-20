@@ -33,9 +33,9 @@ define([
           results = answers.sortObjects([x, y, z]);
 
       expect(results).to.have.length(3);
-      expect(results[0]).to.eq(z);
-      expect(results[1]).to.eq(y);
-      expect(results[2]).to.eq(x);
+      expect(results[0]).to.eql(z);
+      expect(results[1]).to.eql(y);
+      expect(results[2]).to.eql(x);
     });
 
   });
