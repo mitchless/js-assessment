@@ -4,7 +4,7 @@ var tests = [
   'tests/app/bestPractices',
   'tests/app/flowControl',
   'tests/app/functions',
-  'tests/identifyTypes',
+  'tests/app/identifyTypes',
   'tests/app/logicalOperators',
   'tests/app/objects',
   'tests/app/previousDay',
