@@ -21,7 +21,7 @@ define([
 
     it('should return a Date for the previous day', function() {
       var d1 = new Date(2010, 3, 8), d2 = new Date(2010, 3, 7);
-      expect(answers.previousDay(d1)).to.be(d2);
+      expect(answers.previousDay(d1)).to.eql(d2);
     });
 
   });
