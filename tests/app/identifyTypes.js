@@ -18,12 +18,9 @@ define([
    */
   describe("identifyTypes", function() {
 
-    /* Provide your own unit tests */
-
     it('should identify each type', function() {
-      var result = answers.identifyTypes([3, new Date, "Hello World"]);
-      expect(result).to.have.length(3);
-      expect(result.join(' ')).to.be("number Date string");
+      /* Provide your own unit tests */
+      expect(false).to.be(true);
     });
 
   });

@@ -7,35 +7,6 @@ define([
 ], function(_, answers) {
 
   describe("functions", function() {
-    var sayItCalled = false;
-    var sayIt = function(greeting, name, punctuation) {
-          sayItCalled = true;
-          return greeting + ', ' + name + (punctuation || '!');
-        };
-
-    beforeEach(function () {
-      sayItCalled = false;
-    });
-
-    it("should use an array as arguments when calling a function", function() {
-      var result = answers.argsAsArray(sayIt, [ 'Hello', 'World', '!' ]);
-      expect(result).to.be('Hello, World!');
-      expect(sayItCalled).to.be.ok();
-    });
-
-    it("should change the context in which a function is called", function() {
-      var speak = function() {
-            return sayIt(this.greeting, this.name, '!!!');
-          },
-          obj = {
-            greeting : 'Hello',
-            name : 'Seapine'
-          };
-
-      var result = answers.speak(speak, obj);
-      expect(result).to.be('Hello, Seapine!!!');
-      expect(sayItCalled).to.be.ok();
-    });
 
     it('should use closures', function () {
       var arr = [ Math.random(), Math.random(), Math.random(), Math.random() ];
@@ -49,18 +20,6 @@ define([
       for (var i = 0; i < arr.length; i++) {
         expect(funcs[i]()).to.be(doSomeStuff(arr[i]));
       }
-    });
-
-    it("should use arguments", function () {
-      var a = Math.random(),
-          b = Math.random(),
-          c = Math.random(),
-          d = Math.random();
-
-      expect(answers.useArguments(a)).to.be(a);
-      expect(answers.useArguments(a, b)).to.be(a + b);
-      expect(answers.useArguments(a, b, c)).to.be(a + b + c);
-      expect(answers.useArguments(a, b, c, d)).to.be(a + b + c + d);
     });
 
     it("should curry existing functions", function () {

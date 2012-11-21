@@ -1,15 +1,12 @@
 var tests = [
   // link to test files here
-  'tests/app/arrays',
   'tests/app/bestPractices',
-  'tests/app/flowControl',
   'tests/app/functions',
   'tests/app/identifyTypes',
-  'tests/app/logicalOperators',
+  'tests/app/isPalindrome',
+  'tests/app/matrix',
   'tests/app/objects',
-  'tests/app/previousDay',
-  'tests/app/removeDups',
-  'tests/app/sorting'
+  'tests/app/removeDups'
 ];
 
 if (typeof window === 'undefined') {

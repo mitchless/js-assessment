@@ -22,7 +22,7 @@ define(function() {
         function getValue() { return "b"; }
       }
 
-      return getValue();
+      return getValue;
     },
 
     identity : function(val1, val2) {

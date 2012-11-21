@@ -13,7 +13,7 @@ define([
 
     it("should declare functions safely", function() {
       var val = answers.functions(true);
-      expect(val).to.be('a');
+      expect(val()).to.be('a');
     });
 
     it("should understand strict comparison", function() {

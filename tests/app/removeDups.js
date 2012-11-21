@@ -17,10 +17,9 @@ define([
    */
   describe("removeDups", function() {
 
-    /* Provide your own unit tests */
-
     it('should remove duplicates characters from the string argument', function() {
-      expect(answers.removeDuplicateCharacters("abcabcd")).to.be("abcd");
+      /* Provide your own unit tests */
+      expect(false).to.be(true);
     });
 
   });
