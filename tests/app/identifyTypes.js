@@ -19,8 +19,12 @@ define([
   describe("identifyTypes", function() {
 
     it('should identify each type', function() {
+      var data = [3, new Date(), "Hello World", true];
       /* Provide your own unit tests */
-      expect(false).to.be(true);
+      expect(answers.identifyTypes(data).join(' ')).to.be("Number Date String Boolean");
+
+      data = []
+      expect(answers.identifyTypes(data).join(' ')).to.be("");
     });
 
   });

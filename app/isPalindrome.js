@@ -20,7 +20,21 @@ define(function() {
      *   true
      */
     isPalindrome: function(listHead) {
+      var forward = '',
+        backward = '',
+        x,
+        tip = listHead;
 
+      while (tip !== null) {
+        forward += tip.str;
+        tip = tip.next;
+      }
+
+      for(x = forward.length - 1; x > -1; x -= 1) {
+        backward += forward.charAt(x);
+      }
+
+      return forward === backward;
     }
   }
 });

@@ -14,7 +14,22 @@ define(function() {
      * aaaaaaa --->  a
      */
     removeDuplicateCharacters: function(str) {
+      var tracker = {},
+        x,
+        len = str.length,
+        c,
+        deduped = '';
 
+      for(x = 0; x < len; x += 1) {
+        c = str.charAt(x);
+
+        if (tracker[c] === undefined) {
+          tracker[c] = 1;
+          deduped += c;
+        }
+      }
+
+      return deduped;
     }
   }
 });

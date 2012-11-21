@@ -15,7 +15,9 @@ define(function() {
      *
      */
     identifyTypes: function(arr) {
-
+      return arr.map(function(val) {
+        return val.constructor.name;
+      });
     }
   }
 });

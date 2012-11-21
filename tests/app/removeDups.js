@@ -19,7 +19,13 @@ define([
 
     it('should remove duplicates characters from the string argument', function() {
       /* Provide your own unit tests */
-      expect(false).to.be(true);
+      expect(answers.removeDuplicateCharacters('abcabcd')).to.be('abcd');
+      expect(answers.removeDuplicateCharacters('aaaaaaa')).to.be('a');
+      expect(answers.removeDuplicateCharacters('aabbccdd')).to.be('abcd');
+      expect(answers.removeDuplicateCharacters('awabxbcycdzd')).to.be('awbxcydz');
+      expect(answers.removeDuplicateCharacters('abcdefg')).to.be('abcdefg');
+      expect(answers.removeDuplicateCharacters('a')).to.be('a');
+      expect(answers.removeDuplicateCharacters('')).to.be('');
     });
 
   });
